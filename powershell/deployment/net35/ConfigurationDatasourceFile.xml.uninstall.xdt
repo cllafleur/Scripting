@@ -1,0 +1,72 @@
+<?xml version="1.0"?>
+<configurationGroup xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+
+	<configurationSet contextScope="context://DefaultTenantId/Diagnostics" xdt:Locator="Match(contextScope)" xdt:Transform="RemoveAll">
+
+    <element Key="Vcf.EnterpriseLibrairies.Diagnostics.Probes.Bindings" xdt:Locator="Match(Key)" xdt:Transform="RemoveAll">
+      <![CDATA[<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_IDiagnosticProbeService" receiveTimeout="05:00:00"
+          sendTimeout="05:00:00" maxBufferPoolSize="2147483647" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647"
+            maxArrayLength="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" />
+          </security>
+        </binding>
+      </basicHttpBinding>
+      <netTcpBinding>
+        <binding name="netTcpBinding_IDiagnosticProbeService" listenBacklog="2147483647"
+          maxBufferPoolSize="2147483647" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647"
+          portSharingEnabled="false" />
+      </netTcpBinding>
+    </bindings>
+  </system.serviceModel>
+</configuration>]]>
+    </element>
+
+    <element Key="Vcf.EnterpriseLibrairies.Diagnostics.Availability.Bindings" xdt:Locator="Match(Key)" xdt:Transform="RemoveAll">
+      <![CDATA[<configuration>
+  <system.serviceModel>
+    <bindings>
+      <basicHttpBinding>
+        <binding name="BasicHttpBinding_IAvailabilityService" receiveTimeout="05:00:00"
+          sendTimeout="05:00:00" maxBufferPoolSize="2147483647" maxBufferSize="2147483647"
+          maxReceivedMessageSize="2147483647">
+          <readerQuotas maxDepth="2147483647" maxStringContentLength="2147483647"
+            maxArrayLength="2147483647" />
+          <security mode="None">
+            <transport clientCredentialType="None" />
+          </security>
+        </binding>
+      </basicHttpBinding>
+      <netTcpBinding>
+        <binding name="netTcpBinding_IAvailabilityService" listenBacklog="2147483647"
+          maxBufferPoolSize="2147483647" maxBufferSize="2147483647" maxReceivedMessageSize="2147483647"
+          portSharingEnabled="false" />
+      </netTcpBinding>
+    </bindings>
+  </system.serviceModel>
+</configuration>]]>
+    </element>
+
+    <element Key="Vcf.EnterpriseLibrairies.Diagnostics.Probes.Common" xdt:Locator="Match(Key)" xdt:Transform="RemoveAll">
+			<![CDATA[
+					 <configuration>
+						 <configSections>
+								<section name="Vcf.Diagnostics.Component" type="Vcf.EntLib.Diagnostics.Tests.DiagnosticSection,Vcf.EntLib.Diagnostics.Probes" />
+							</configSections>
+						 <Vcf.Diagnostics.Component>
+							 <HostingTestAssemblies>
+							 </HostingTestAssemblies>
+						 </Vcf.Diagnostics.Component>
+				 </configuration>
+			]]>
+		</element>
+
+	</configurationSet>
+
+</configurationGroup>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+	<system.serviceModel>  
+		    <services>
+      <service name="Vcf.EntLib.Diagnostics.Probes.DiagnosticService" xdt:Locator="Match(name)" xdt:Transform="RemoveAll">
+        <endpoint address="" binding="basicHttpBinding" contract="Vcf.EntLib.Diagnostics.Probes.IDiagnosticProbeService"/>
+	<!--<endpoint address="" binding="netTcpBinding" contract="Vcf.EntLib.Diagnostics.Probes.IDiagnosticProbeService"/>-->
+      </service>
+      <service name="Vcf.EntLib.Diagnostics.Availability.AvailabilityService" xdt:Locator="Match(name)" xdt:Transform="RemoveAll">
+        <endpoint address="" binding="basicHttpBinding" contract="Vcf.EntLib.Diagnostics.Availability.IAvailabilityService"/>
+	<!--<endpoint address="" binding="netTcpBinding" contract="Vcf.EntLib.Diagnostics.Availability.IAvailabilityService"/>-->
+      </service>
+    </services>
+  </system.serviceModel>
+  
+  <location path="Availability.svc" xdt:Locator="Match(path)" xdt:Transform="RemoveAll">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  <location path="Diagnostic.svc" xdt:Locator="Match(path)" xdt:Transform="RemoveAll">
+    <system.web>
+      <authorization>
+        <allow users="*" />
+      </authorization>
+    </system.web>
+  </location>
+  
+</configuration>
+
